@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "JobsApplication", "JobsApplication\JobsApplication.esproj", "{540B4C89-1FCC-4B8C-984D-3B5341E70555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsApplicationBackend", "JobsApplicationBackend\JobsApplicationBackend.csproj", "{69A40322-7B34-4400-9FB3-4CA10F210816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobsApplicationBackend", "JobsApplicationBackend\JobsApplicationBackend.csproj", "{69A40322-7B34-4400-9FB3-4CA10F210816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
