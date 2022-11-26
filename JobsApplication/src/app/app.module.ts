@@ -5,11 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SubmitComponent } from './submit/submit.component';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SubmitComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule
