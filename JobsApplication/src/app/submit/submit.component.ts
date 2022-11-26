@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { JobApplicationSave } from '../models';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-submit',
@@ -10,7 +10,7 @@ import { JobApplicationSave } from '../models';
 export class SubmitComponent {
   public fileData: any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   uploadFile = (data: any) => {
     console.log(data);
@@ -21,12 +21,14 @@ export class SubmitComponent {
     const formData = new FormData();
     formData.append('Name', e.name);
     formData.append('Email', e.email);
+    formData.append('JobType', e.jobType);
     formData.append('DateOfBirth', e.dateOfBirth);
     formData.append('CvBlob', this.fileData);
-    console.log(e)
     e.cvBlob = this.fileData;
-    this.httpClient.post('api/jobApplications', formData).subscribe(result => {
-      console.log(result);
-    }, error => console.error(error));
+    this.httpClient.post('api/jobApplications', formData).subscribe(() => {
+      this.router.navigate(['/view'])
+    }, error => {
+      alert(error.error);
+    });
   }
 }

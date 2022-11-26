@@ -12,6 +12,8 @@ namespace JobsApplicationBackend.Dtos
         [Required]
         public DateTime DateOfBirth { get; set; }
         [Required]
+        public string JobType { get; set; }
+        [Required]
         public IFormFile CvBlob { get; set; }
     }
 }

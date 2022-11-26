@@ -34,9 +34,16 @@ namespace JobsApplicationBackend.Services
             return _repository.GetJobApplications();
         }
 
-        public Task<int> SaveJobApplication(JobApplicationSaveDto jobApplicationDto)
+        public async Task<(int createdId, bool status, string message)> SaveJobApplication(JobApplicationSaveDto jobApplicationDto)
         {
             //error if already submitted
+            var alreadySubmitted = _repository.CheckIfAlreadyApplied(jobApplicationDto);
+
+            if(alreadySubmitted)
+            {
+                return (0, false, "Already Submitted");
+            }
+
             //Upload
             var fileName = SaveCv(jobApplicationDto.CvBlob);
 
@@ -46,9 +53,12 @@ namespace JobsApplicationBackend.Services
                 Name = jobApplicationDto.Name,
                 Email = jobApplicationDto.Email,
                 DateOfBirth = jobApplicationDto.DateOfBirth,
+                JobType = jobApplicationDto.JobType,
                 CvBlob = fileName
             };
-            return _repository.SaveJobApplication(jobApplication);
+            var createdId = await _repository.SaveJobApplication(jobApplication);
+
+            return (createdId, true, "submitted Successfully");
         }
 
         private string SaveCv(IFormFile file)

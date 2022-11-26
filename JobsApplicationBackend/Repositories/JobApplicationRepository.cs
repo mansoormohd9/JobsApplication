@@ -1,4 +1,5 @@
-﻿using JobsApplicationBackend.Models;
+﻿using JobsApplicationBackend.Dtos;
+using JobsApplicationBackend.Models;
 
 namespace JobsApplicationBackend.Repositories
 {
@@ -37,6 +38,12 @@ namespace JobsApplicationBackend.Repositories
         public JobApplication? Get(int id)
         {
             return _context.JobApplications.FirstOrDefault(e => e.Id == id);
+        }
+
+        public bool CheckIfAlreadyApplied(JobApplicationSaveDto jobApplicationDto)
+        {
+            return _context.JobApplications.Any(x => x.Email == jobApplicationDto.Email &&
+                                                        x.JobType == jobApplicationDto.JobType);
         }
     }
 }

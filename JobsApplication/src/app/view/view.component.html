@@ -4,6 +4,7 @@
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Job Type</th>
             <th scope="col">Date of Birth</th>
             <th scope="col">CV Link</th>
             <th scope="col">Delete</th>
@@ -13,6 +14,7 @@
             <tr *ngFor="let jobApplication of jobApplications">
                 <td>{{ jobApplication.name }}</td>
                 <td>{{ jobApplication.email }}</td>
+                <td>{{ jobApplication.jobType }}</td>
                 <td>{{ jobApplication.dateOfBirth }}</td>
                 <td><a href="#" (click)="downloadFile($event, jobApplication.cvBlob)">{{jobApplication.cvBlob}}</a></td>
                 <td><a href="#" (click)="deleteApplication($event, jobApplication.id)">Delete</a></td>

@@ -29,9 +29,14 @@ namespace JobsApplicationBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<JobApplication>> PostJobApplication([FromForm] JobApplicationSaveDto jobApplication)
         {
-            var jobApplicationId = await _service.SaveJobApplication(jobApplication);
+            var result= await _service.SaveJobApplication(jobApplication);
 
-            return CreatedAtAction("GetJobApplication", new { id = jobApplicationId }, jobApplication);
+            if(!result.status)
+            {
+                return BadRequest(result.message);
+            }
+
+            return Ok(result.createdId);
         }
 
         // DELETE: api/JobApplications/5

@@ -2,6 +2,7 @@ export interface JobApplication {
     id: number;
     name: string;
     email: string;
+    jobType: string;
     dateOfBirth: string;
     cvBlob: string;
 }
