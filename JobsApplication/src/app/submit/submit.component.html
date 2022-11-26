@@ -2,19 +2,23 @@
     <form class="row g-3">
         <div class="col-md-6">
             <label for="inputName4" class="form-label">Name</label>
-            <input type="text" class="form-control" id="inputName4">
+            <input type="text" class="form-control" id="inputName4" required>
+            <div class="invalid-feedback">Name is required</div>
         </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input type="email" class="form-control" id="inputEmail4" required>
+            <div class="invalid-feedback">Email is required</div>
         </div>
         <div class="col-md-6">
             <label for="inputDate" class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" id="inputDate" placeholder="1234 Main St">
+            <input type="date" class="form-control" id="inputDate" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">Date of Birth is required</div>
         </div>
         <div class="col-md-6">
             <label for="inputUpload" class="form-label">CV Upload</label>
-            <input type="file" class="form-control" id="inputUpload">
+            <input type="file" class="form-control" id="inputUpload" required>
+            <div class="invalid-feedback">CV is required</div>
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Submit</button>
