@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using JobsApplicationBackend.Models;
 using JobsApplicationBackend.Services;
+using JobsApplicationBackend.Dtos;
 
 namespace JobsApplicationBackend.Controllers
 {
@@ -8,9 +9,9 @@ namespace JobsApplicationBackend.Controllers
     [ApiController]
     public class JobApplicationsController : ControllerBase
     {
-        private readonly JobApplicationService _service;
+        private readonly IJobApplicationService _service;
 
-        public JobApplicationsController(JobApplicationService service)
+        public JobApplicationsController(IJobApplicationService service)
         {
             _service = service;
         }
@@ -26,7 +27,7 @@ namespace JobsApplicationBackend.Controllers
         // POST: api/JobApplications
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<JobApplication>> PostJobApplication(JobApplication jobApplication)
+        public async Task<ActionResult<JobApplication>> PostJobApplication([FromForm] JobApplicationSaveDto jobApplication)
         {
             var jobApplicationId = await _service.SaveJobApplication(jobApplication);
 

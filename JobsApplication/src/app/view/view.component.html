@@ -14,8 +14,8 @@
                 <td>{{ jobApplication.name }}</td>
                 <td>{{ jobApplication.email }}</td>
                 <td>{{ jobApplication.dateOfBirth }}</td>
-                <td>{{ jobApplication.cvBlob }}</td>
-                <td><a href="#">Delete</a></td>
+                <td><a href="#" (click)="downloadFile($event, jobApplication.cvBlob)">{{jobApplication.cvBlob}}</a></td>
+                <td><a href="#" (click)="deleteApplication($event, jobApplication.id)">Delete</a></td>
             </tr>
         </tbody>
       </table>

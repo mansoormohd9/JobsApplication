@@ -7,7 +7,7 @@ namespace JobsApplicationBackend.Repositories
         IList<JobApplication> GetJobApplications();
         Task<int> SaveJobApplication(JobApplication jobApplication);
         Task DeleteJobApplication(int id);
-        bool JobApplicationExists(int id);
+        JobApplication? Get(int id);
 
     }
 }

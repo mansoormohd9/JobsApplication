@@ -1,27 +1,27 @@
 <div class="container mt-5">
-    <form class="row g-3">
+    <form class="row g-3" id="ngForm" #applicantData = "ngForm" (ngSubmit) = "submitApplicant(applicantData.value)" ngNativeValidate>
         <div class="col-md-6">
             <label for="inputName4" class="form-label">Name</label>
-            <input type="text" class="form-control" id="inputName4" required>
+            <input type="text" class="form-control" id="inputName4" name="name" ngModel required>
             <div class="invalid-feedback">Name is required</div>
         </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" required>
+            <input type="email" class="form-control" id="inputEmail4" name="email" ngModel  required>
             <div class="invalid-feedback">Email is required</div>
         </div>
         <div class="col-md-6">
             <label for="inputDate" class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" id="inputDate" placeholder="1234 Main St" required>
+            <input type="date" class="form-control" id="inputDate" name="dateOfBirth" ngModel  required>
             <div class="invalid-feedback">Date of Birth is required</div>
         </div>
         <div class="col-md-6">
             <label for="inputUpload" class="form-label">CV Upload</label>
-            <input type="file" class="form-control" id="inputUpload" required>
-            <div class="invalid-feedback">CV is required</div>
+            <input type="file" class="form-control" id="inputUpload" accept=".doc,.pdf" (change)="uploadFile($event)"  required>
+            <div class="invalid-feedback">CV is  required</div>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" form="ngForm">Submit</button>
         </div>
     </form>
 </div>

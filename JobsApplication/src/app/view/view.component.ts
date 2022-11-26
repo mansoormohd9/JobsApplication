@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { JobApplication } from 'src/app/models';
 
 @Component({
   selector: 'app-view',
@@ -8,19 +9,26 @@ import { Component } from '@angular/core';
 })
 export class ViewComponent {
   public jobApplications?: JobApplication[];
+  private client: HttpClient;
 
   constructor(http: HttpClient) {
-    http.get<JobApplication[]>('/jobApplications').subscribe(result => {
+    this.client = http;
+    http.get<JobApplication[]>('api/jobApplications').subscribe(result => {
       this.jobApplications = result;
     }, error => console.error(error));
   }
 
-  title = 'JobsApplication';
-}
+  downloadFile = (e: Event, fileName: string) => {
+    e.preventDefault();
+    window.open(`/UploadedFiles/${fileName}`, "_blank");
+  }
 
-interface JobApplication {
-  name: string;
-  email: number;
-  dateOfBirth: number;
-  cvBlob: string;
+  deleteApplication = (e:Event, id: number) => {
+    e.preventDefault();
+    this.client.delete(`api/jobApplications/${id}`).subscribe(() => {
+      this.jobApplications = this.jobApplications?.filter(x => x.id != id);
+    }, error => console.error(error));
+  }
+
+  title = 'JobsApplication';
 }

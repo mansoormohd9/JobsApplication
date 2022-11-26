@@ -1,7 +1,8 @@
 const PROXY_CONFIG = [
   {
     context: [
-      "/jobApplications",
+      "/api/jobApplications",
+      "/UploadedFiles",
     ],
     target: "https://localhost:7102",
     secure: false

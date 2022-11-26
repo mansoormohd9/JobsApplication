@@ -34,9 +34,9 @@ namespace JobsApplicationBackend.Repositories
             }
         }
 
-        public bool JobApplicationExists(int id)
+        public JobApplication? Get(int id)
         {
-            return _context.JobApplications.Any(e => e.Id == id);
+            return _context.JobApplications.FirstOrDefault(e => e.Id == id);
         }
     }
 }
