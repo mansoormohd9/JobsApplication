@@ -63,7 +63,7 @@ namespace JobsApplicationBackend.Services
 
         private string SaveCv(IFormFile file)
         {
-            var fileName = Guid.NewGuid().ToString() + "." + file.FileName.Split(".").Last();
+            var fileName = Guid.NewGuid().ToString() + "." + file.FileName.Split(".").LastOrDefault();
             var savePath = Path.Combine(fileUploadPath, fileName);
             using (var stream = new FileStream(savePath, FileMode.Create))
             {
