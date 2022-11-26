@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "JobsApplication", "JobsApplication\JobsApplication.esproj", "{540B4C89-1FCC-4B8C-984D-3B5341E70555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsApplicationBackend", "JobsApplicationBackend\JobsApplicationBackend.csproj", "{69A40322-7B34-4400-9FB3-4CA10F210816}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{540B4C89-1FCC-4B8C-984D-3B5341E70555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540B4C89-1FCC-4B8C-984D-3B5341E70555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540B4C89-1FCC-4B8C-984D-3B5341E70555}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{540B4C89-1FCC-4B8C-984D-3B5341E70555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540B4C89-1FCC-4B8C-984D-3B5341E70555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540B4C89-1FCC-4B8C-984D-3B5341E70555}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{69A40322-7B34-4400-9FB3-4CA10F210816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A40322-7B34-4400-9FB3-4CA10F210816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A40322-7B34-4400-9FB3-4CA10F210816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A40322-7B34-4400-9FB3-4CA10F210816}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB3249B6-3CC9-42BB-A715-1A8635A8A289}
+	EndGlobalSection
+EndGlobal
